@@ -285,6 +285,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.debug.sf.fbthint=1 \
     vendor.display.enable_ic_hw_roundedcorner=1
 
+# HWUI
+PRODUCT_PROPERTY_OVERRIDES += \
+debug.hwui.target_cpu_time_percent=30 \
+debug.hwui.use_hint_manager=true
+
 # Keymint
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.apk_verity.mode=1 \
