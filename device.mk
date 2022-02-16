@@ -317,6 +317,7 @@ PRODUCT_PACKAGES += \
     libmtkperf_client:64
 
 PRODUCT_COPY_FILES += \
+
 $(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Permissions
@@ -443,6 +444,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1.vendor \
     android.hardware.sensors-V2-ndk.vendor \
     android.hardware.sensors@2.0-subhal-impl-1.0 \
+    sensors.nothing \
     libsensorndkbridge
 
 PRODUCT_COPY_FILES += \
