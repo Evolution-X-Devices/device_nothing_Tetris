@@ -280,6 +280,13 @@ PRODUCT_PACKAGES += \
     android.hardware.light-V2-ndk.vendor \
     android.hardware.light@2.0.vendor
 
+# NTF
+PRODUCT_PACKAGES += \
+    nt-fwk.Tetris
+
+PRODUCT_BOOT_JARS += \
+    nt-fwk.Tetris
+
 # Media (C2)
 PRODUCT_PACKAGES += \
     libavservices_minijail.vendor \
