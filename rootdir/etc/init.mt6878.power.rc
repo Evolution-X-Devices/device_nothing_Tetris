@@ -179,3 +179,14 @@ on property:ro.boot.ddr_size=8589934592
     setprop dalvik.vm.heaptargetutilization 0.46
     setprop dalvik.vm.heapminfree 8m
     setprop dalvik.vm.heapmaxfree 48m
+    
+     # Gralloc
+    service vendor.gralloc-v2 /vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
+    class hal animation
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    onrestart restart vendor.hwcomposer-3-2
+    onrestart restart camerahalserver
+    task_profiles ProcessCapacityHigh HighPerformance
