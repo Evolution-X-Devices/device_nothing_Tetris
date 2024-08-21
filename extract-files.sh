@@ -92,6 +92,9 @@ function blob_fixup() {
         vendor/lib64/libnvram.so)
             "$PATCHELF" --add-needed libbase_shim.so "$2"
             ;;
+        vendor/bin/hw/mt6878/camerahalserver)
+            "$PATCHELF" --add-needed libcamera_metadata_shim.so "$2"
+            ;;
         vendor/lib64/libtflite_mtk.so)
             "$PATCHELF" --add-needed libbase_shim.so "$2"
             ;;
