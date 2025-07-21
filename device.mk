@@ -278,7 +278,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor \
     android.hardware.power-service.pixel-libperfmgr \
     vendor.mediatek.hardware.mtkpower@1.2-service.stub
-        
 
 PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.0.vendor \
@@ -287,7 +286,8 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service-mediatek \
 
 PRODUCT_PACKAGES += \
-    libmtkperf_client_vendor
+    libmtkperf_client_vendor \
+    libpowerhalwrap_vendor
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/power/,$(TARGET_COPY_OUT_VENDOR)/etc)
