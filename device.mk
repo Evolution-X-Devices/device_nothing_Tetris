@@ -274,16 +274,20 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
+    android.hardware.power-V4-ndk.vendor \
+    android.hardware.power@1.2.vendor \
     android.hardware.power-service.pixel-libperfmgr \
-    pixel-power-ext-V1-ndk.vendor
+    vendor.mediatek.hardware.mtkpower@1.2-service.stub
+        
 
 PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.0.vendor \
     vendor.mediatek.hardware.mtkpower@1.1.vendor \
     vendor.mediatek.hardware.mtkpower@1.2.vendor \
     android.hardware.power-service-mediatek \
-    android.hardware.power-V4-ndk.vendor \
-    android.hardware.power@1.2.vendor
+
+PRODUCT_PACKAGES += \
+    libmtkperf_client_vendor
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/power/,$(TARGET_COPY_OUT_VENDOR)/etc)
@@ -392,6 +396,7 @@ PRODUCT_PACKAGES += \
     init.connectivity.common.rc \
     init.modem.rc \
     init.mt6878.rc \
+    init.mt6878.power.rc \
     init.mt6878.usb.rc \
     init.mtkgki.rc \
     init.project.rc \
@@ -427,10 +432,11 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    hardware/mediatek \
-    hardware/mediatek/libmtkperf_client \
     hardware/google/pixel \
     hardware/google/interfaces \
+    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/mediatek \
+    hardware/mediatek/libmtkperf_client \
     $(LOCAL_PATH)
 
 # Performance
