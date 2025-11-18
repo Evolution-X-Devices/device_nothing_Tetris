@@ -23,6 +23,9 @@ on init
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 10
 
+    # system
+    write /dev/cpuctl/system/cpu.shares 20480
+
     # Background tasks for best efficiency
     write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
     write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
