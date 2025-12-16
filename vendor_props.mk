@@ -501,6 +501,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.mtk.sensor.support=yes \
     ro.vendor.mtk_thermal_2_0=1
 
+# Update engine
+ro.virtual_ab.compression.threads=true
+
 # Vendor logtag
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.log.tag.AT=$(VENDOR_LOG_LEVEL) \
