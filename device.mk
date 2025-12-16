@@ -58,6 +58,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
 include $(LOCAL_PATH)/vendor_props.mk
 
 # Inherit virtual_ab_ota product
+ifeq ($(WITH_GMS),true)
+PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE ?= erofs
+else
+PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE ?= ext4
+endif
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
@@ -69,7 +75,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
+    FILESYSTEM_TYPE_system=$(PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE) \
     POSTINSTALL_OPTIONAL_system=true
 
 AB_OTA_POSTINSTALL_CONFIG += \
