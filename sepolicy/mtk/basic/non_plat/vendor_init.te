@@ -141,6 +141,10 @@ allow vendor_init proc_sched:file w_file_perms;
 # Purpose: Set the ro.vendor.mtk_aod_support property
 set_prop(vendor_init, vendor_mtk_aod_support_prop)
 
+# Date 2025/12/31
+rw_dir_file(vendor_init, sysfs_ged)
+rw_dir_file(vendor_init, sysfs_gpu)
+
 # Data 2021/08/06
 # Purpose: Set the ro.vendor.bluetooth.a2dp_aac_vbr.is_disabled property
 set_prop(vendor_init, vendor_mtk_bt_aac_vbr_prop)
