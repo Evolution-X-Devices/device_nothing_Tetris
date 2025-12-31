@@ -20,7 +20,7 @@ on init
     write /dev/cpuctl/background/cpu.shares 1024
     write /dev/cpuctl/system-background/cpu.shares 1024
     write /dev/cpuctl/background/cpu.uclamp.min 0
-    write /dev/cpuctl/background/cpu.uclamp.max 50
+    write /dev/cpuctl/background/cpu.uclamp.max 40
     write /dev/cpuctl/system-background/cpu.uclamp.min 1
     write /dev/cpuctl/system-background/cpu.uclamp.max 50
 
