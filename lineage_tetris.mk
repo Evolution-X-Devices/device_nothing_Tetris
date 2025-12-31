@@ -22,6 +22,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 persist.vendor.power.adpf.enable=true \
 ro.vendor.powerhal.adpf.enable=true
 
+#crDroid flags
+TARGET_ENABLE_BLUR := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
 
 #gpu
 GPU_FREQS_PATH := /sys/devices/platform/13000000.mali/devfreq/available_frequencies
