@@ -55,12 +55,12 @@ on init
     write /dev/cpuctl/top-app/cpu.shares 20480
 
     # GPU tuning
-    write /sys/kernel/ged/hal/loading_base_dvfs_step 259
+    write /sys/kernel/ged/hal/loading_base_dvfs_step 104
     write /sys/kernel/ged/hal/dvfs_loading_mode 0
-    write /sys/kernel/ged/hal/dcs_mode 64
+    write /sys/kernel/ged/hal/dcs_mode 1
     write /sys/kernel/ged/hal/fw_idle 0
     write /sys/kernel/ged/hal/loading_stride_size 2
-    write /sys/kernel/ged/hal/fallback_timing 210
+    write /sys/kernel/ged/hal/fallback_timing 180
     write /sys/kernel/ged/hal/fallback_interval 1
     write /sys/kernel/ged/hal/fallback_window_size 1
     write /sys/kernel/ged/hal/force_loading_base 0
