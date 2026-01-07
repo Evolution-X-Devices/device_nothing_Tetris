@@ -191,7 +191,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.renderengine.backend=skiaglthreaded \
+    debug.renderengine.backend=skiagl \
     debug.sf.enable_gl_backpressure=1
     debug.sf.early.app.duration=15600000 \
     debug.sf.early.sf.duration=14600000 \
@@ -222,8 +222,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.use_color_management=true \
     ro.surface_flinger.primary_display_orientation=ORIENTATION_0 \
     ro.surface_flinger.protected_contents=true \
-    ro.surface_flinger.set_idle_timer_ms=2000 \
-    ro.surface_flinger.set_touch_timer_ms=300 \
+    ro.surface_flinger.set_idle_timer_ms=3000 \
+    ro.surface_flinger.set_touch_timer_ms=200 \
     ro.surface_flinger.uclamp.min=128 \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=4 \
     ro.surface_flinger.set_display_power_timer_ms=1000 \
