@@ -191,8 +191,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.renderengine.backend=skiagl \
-    debug.sf.enable_gl_backpressure=1
+    debug.renderengine.backend=skiaglthreaded \
     debug.sf.early.app.duration=15600000 \
     debug.sf.early.sf.duration=14600000 \
     debug.sf.earlyGl.app.duration=15600000 \
