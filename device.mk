@@ -338,8 +338,8 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.nothing
 
     # UDFPS dim layer call
-$(call soong_config_set,surfaceflinger,has_mtk_udfps,true)
-
+$(call soong_config_set_bool,surfaceflinger,has_mtk_udfps,true)
+$(call soong_config_set,surfaceflinger,mtk_dim_layer,NTFingerprintDimLayer)
 
 # Properties
 include $(LOCAL_PATH)/vendor_props.mk

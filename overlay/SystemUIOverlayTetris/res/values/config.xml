@@ -20,67 +20,12 @@
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
 
-    <!-- Whether to enable framework dimming for UDFPS -->
-    <bool name="config_udfpsFrameworkDimming">false</bool>
+<!-- Whether to enable MediaTek-specific optical dimming for UDFPS -->
+    <bool name="config_udfpsMtkGhbmDimming">true</bool>
 
-    <!-- Array of brightness-alpha lut for framework dimming -->
-    <string-array name="config_udfpsDimmingBrightnessAlphaArray" translatable="false">
-        <item>0,250</item>
-        <item>14,248</item>
-        <item>28,245</item>
-        <item>41,242</item>
-        <item>55,238</item>
-        <item>83,235</item>
-        <item>110,232</item>
-        <item>138,228</item>
-        <item>165,224</item>
-        <item>207,218</item>
-        <item>248,212</item>
-        <item>276,208</item>
-        <item>303,204</item>
-        <item>345,198</item>
-        <item>386,192</item>
-        <item>441,185</item>
-        <item>483,180</item>
-        <item>524,174</item>
-        <item>579,168</item>
-        <item>634,162</item>
-        <item>690,156</item>
-        <item>745,150</item>
-        <item>800,144</item>
-        <item>869,137</item>
-        <item>938,131</item>
-        <item>1007,125</item>
-        <item>1076,119</item>
-        <item>1145,113</item>
-        <item>1214,107</item>
-        <item>1297,101</item>
-        <item>1379,95</item>
-        <item>1462,89</item>
-        <item>1545,83</item>
-        <item>1628,78</item>
-        <item>1711,72</item>
-        <item>1807,67</item>
-        <item>1904,62</item>
-        <item>2000,57</item>
-        <item>2097,52</item>
-        <item>2193,47</item>
-        <item>2290,42</item>
-        <item>2386,38</item>
-        <item>2483,34</item>
-        <item>2579,30</item>
-        <item>2676,26</item>
-        <item>2772,22</item>
-        <item>2869,18</item>
-        <item>2965,14</item>
-        <item>3103,10</item>
-        <item>3241,6</item>
-        <item>3379,3</item>
-        <item>3515,0</item>
-    </string-array>
+    <!-- Name of the UDFPS HBM DimLayer for the HWComposer -->
+    <string name="config_udfpsHbmDimLayer" translatable="false">NTFingerprintDimLayer</string>
 
-<!-- Keep your existing LUT in place; ensure it’s present in this file too -->
-<!-- If your LUT lives in a separate overlay file already, leave it there -->
     <!-- UI performance hints -->
     <bool name="config_enablePerformanceHints">true</bool>
     <bool name="config_enableInputPerfHints">true</bool>
