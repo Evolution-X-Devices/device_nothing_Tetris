@@ -24,6 +24,13 @@ on init
     write /dev/cpuctl/system-background/cpu.uclamp.min 1
     write /dev/cpuctl/system-background/cpu.uclamp.max 50
 
+    # Make foreground and background I/O priority different. none-to-rt was
+    # introduced in kernel 5.14. promote-to-rt was introduced in kernel 6.5.
+    # Write none-to-rt first and promote-to-rt next to support both older and
+    # newer kernel versions.
+    write /dev/blkio/blkio.prio.class none-to-rt
+    write /dev/blkio/blkio.prio.class promote-to-rt
+
     # Camera daemon tasks
     write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
     write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
@@ -56,6 +63,23 @@ on init
     write /dev/cpuctl/foreground/cpu.uclamp.min 5
     write /dev/cpuctl/top-app/cpu.uclamp.max max
     write /dev/cpuctl/top-app/cpu.shares 20480
+    
+    # F2FS
+    write /dev/sys/fs/by-name/userdata/data_io_flag 56
+    write /dev/sys/fs/by-name/userdata/node_io_flag 56
+
+    # F2FS (charger / post-boot)
+    write /dev/sys/fs/by-name/userdata/data_io_flag 8
+    write /dev/sys/fs/by-name/userdata/node_io_flag 8
+    write /dev/sys/fs/by-name/userdata/max_io_bytes 524288
+    write /dev/sys/fs/by-name/userdata/min_hot_blocks 0
+
+    # multi-gen LRU
+    write /sys/kernel/mm/lru_gen/enabled y
+
+    # UFS
+    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 0
+    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 1
 
     # GPU tuning
     write /sys/kernel/ged/hal/loading_base_dvfs_step 104
