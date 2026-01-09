@@ -16,8 +16,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.activity_anim_perf_override=true \
     persist.sys.phh.mtk_ged_kpi=1 \
     ro.soc.manufacturer=MediaTek \
-    ro.soc.model=Dimensity_7300 \
-    persist.sys.sf.color_saturation=0.759 
+    ro.soc.model=Dimensity_7300  
     
 
 # ART / JIT / Dex2Oat 
