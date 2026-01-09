@@ -226,7 +226,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.protected_contents=true \
     ro.surface_flinger.set_idle_timer_ms=3000 \
     ro.surface_flinger.set_touch_timer_ms=200 \
-    ro.surface_flinger.uclamp.min=160 \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=4 \
     ro.surface_flinger.set_display_power_timer_ms=1000 \
     ro.surface_flinger.supports_background_blur=1
