@@ -178,6 +178,10 @@ on post-fs-data
     wait_for_prop vendor.all.modules.ready 1
     write /proc/bootprof "modprobe: Load_Module_DONE"
     
+
+    # GPU devfreq governor (Mali)
+    write /sys/class/devfreq/13000000.mali/governor simple_ondemand
+
     # Disable watermark boost
     write /proc/sys/vm/watermark_boost_factor 0
 
