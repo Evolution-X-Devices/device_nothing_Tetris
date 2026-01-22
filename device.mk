@@ -271,26 +271,18 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-V4-ndk.vendor \
-    android.hardware.power@1.2.vendor \
     android.hardware.power-service.pixel-libperfmgr \
-    vendor.mediatek.hardware.mtkpower@1.2-service.stub
-
-PRODUCT_PACKAGES += \
-    vendor.mediatek.hardware.mtkpower@1.0.vendor \
-    vendor.mediatek.hardware.mtkpower@1.1.vendor \
-    vendor.mediatek.hardware.mtkpower@1.2.vendor \
-    android.hardware.power-service-mediatek \
+    vendor.mediatek.hardware.mtkpower@1.2-service.stub \
+    android.hardware.power-V4-ndk.vendor \
+    android.hardware.power@1.2.vendor
 
 PRODUCT_PACKAGES += \
     libmtkperf_client_vendor \
-    libpowerhalwrap_vendor
+    libpowerhalwrap_vendor \
+    libmtkperf_client
 
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/power/,$(TARGET_COPY_OUT_VENDOR)/etc)
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+$(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -408,10 +400,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
 
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal-V1-ndk.vendor
-
 # Sensors
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
@@ -434,11 +422,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     $(LOCAL_PATH)
-
-# Performance
-PRODUCT_PACKAGES += \
-    libmtkperf_client \
-    libmtkperf_client_vendor
 
 # USB
 PRODUCT_PACKAGES += \
