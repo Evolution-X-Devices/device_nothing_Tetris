@@ -5,10 +5,10 @@ on init
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-7
 
-## Utilization Clamping
+# Utilization Clamping
     # Tuning
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
-    write /proc/sys/kernel/sched_util_clamp_min 0
+    write /proc/sys/kernel/sched_util_clamp_min 128
 
     # Real-Time tasks
     write /dev/cpuctl/rt/cpu.uclamp.latency_sensitive 1
@@ -23,8 +23,8 @@ on init
     write /dev/cpuctl/system-background/cpu.shares 1024
     write /dev/cpuctl/background/cpu.uclamp.min 0
     write /dev/cpuctl/background/cpu.uclamp.max 40
-    write /dev/cpuctl/system-background/cpu.uclamp.min 20
-    write /dev/cpuctl/system-background/cpu.uclamp.max 100
+    write /dev/cpuctl/system-background/cpu.uclamp.min 1
+    write /dev/cpuctl/system-background/cpu.uclamp.max 50
 
     # Make foreground and background I/O priority different. none-to-rt was
     # introduced in kernel 5.14. promote-to-rt was introduced in kernel 6.5.
@@ -62,7 +62,7 @@ on init
 
     # Top app tasks
     write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
-    write /dev/cpuctl/top-app/cpu.uclamp.min 30
+    write /dev/cpuctl/foreground/cpu.uclamp.min 5
     write /dev/cpuctl/top-app/cpu.uclamp.max max
     write /dev/cpuctl/top-app/cpu.shares 20480
     
