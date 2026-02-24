@@ -7,11 +7,8 @@ if [ ! -d "hardware/mediatek" ]; then
   git clone https://github.com/SuperAviation001/android_hardware_mediatek -b lineage-22.2 hardware/mediatek
 fi
 if [ ! -d "vendor/nothing/tetris" ]; then
-  git clone https://gitlab.com/abdullashakkeeb693/tetris_vendor_tree -b a15 vendor/nothing/tetris
+  git clone https://gitlab.com/abdullashakkeeb693/tetris_vendor_tree -b a15 vendor/nothing/Tetris
 fi
-if [ ! -d "device/nothing/tetris-kernel" ]; then
-  git clone https://github.com/SuperAviation001/android_device_nothing_tetris-kernel -b lineage-22.2 device/nothing/tetris-kernel
-fi
-if [ ! -d "packages/apps/ViPER4AndroidFX" ]; then
-  git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX -b v4a packages/apps/ViPER4AndroidFX
+if [ ! -d "device/nothing/Tetris-kernel" ]; then
+  git clone https://github.com/SuperAviation001/android_device_nothing_Tetris-kernel -b lineage-23.2 device/nothing/Tetris-kernel
 fi
