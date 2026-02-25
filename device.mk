@@ -140,11 +140,7 @@ PRODUCT_COPY_FILES += \
 
 # NTF
 PRODUCT_PACKAGES += \
-    nt-fwk.tetris
-
-PRODUCT_BOOT_JARS += \
-    nt-fwk.tetris
-
+    nt-fwk.Tetris
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.common-V1-ndk.vendor \
@@ -393,7 +389,7 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Kernel
-$(call inherit-product, device/nothing/tetris-kernel/kernel.mk)
+$(call inherit-product, device/nothing/Tetris-kernel/kernel.mk)
 
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -476,4 +472,4 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/nothing/tetris/tetris-vendor.mk)
+$(call inherit-product, vendor/nothing/Tetris/Tetris-vendor.mk)
