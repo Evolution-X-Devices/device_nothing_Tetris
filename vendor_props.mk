@@ -240,6 +240,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.array.hbm.minlux=7000,18000,38000 \
     ro.vendor.display.array.lux=0,1,4,10,25,60,150,390,620,750,1000,1300,1700,2800,3500,4500,7000,8000 \
     ro.vendor.display.array.nits=7,7,14,34,70,84,90,111,132,145,178,211,248,318,344,500,500,700 \
+    ro.surface_flinger.uclamp.min=320
     ro.vendor.display.hbm.maxbacklight=4095 \
     ro.vendor.display.low_brightness_threshold=0.108 \
     ro.vendor.display.normal.maxbacklight=2680 \
