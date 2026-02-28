@@ -11,7 +11,7 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.wifi.resources.tetris">
+    package="com.android.wifi.resources.Tetris">
 
     <application android:hasCode="false" />
     <overlay android:targetPackage="com.android.wifi.resources" android:targetName="WifiCustomization" android:isStatic="true" android:priority="1" />

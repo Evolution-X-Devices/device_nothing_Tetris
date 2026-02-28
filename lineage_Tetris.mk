@@ -25,9 +25,7 @@ ro.vendor.powerhal.adpf.enable=true
 #crDroid flags
 TARGET_ENABLE_BLUR := true
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_HAS_UDFPS := true
-EXTRA_UDFPS_ANIMATIONS := true
-
+WITH_GMS := true
 #gpu
 GPU_FREQS_PATH := /sys/devices/platform/13000000.mali/devfreq/available_frequencies
 GPU_MIN_FREQ_PATH := /sys/devices/platform/13000000.mali/devfreq/min_freq
@@ -43,7 +41,7 @@ PRODUCT_MODEL := A015
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
-DEVICE_CODENAME := tetris
+DEVICE_CODENAME := Tetris
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="Tetris 15 AP3A.240905.015.A2 2506092111 release-keys" \

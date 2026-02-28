@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.dt2w.tetris;
+package org.lineageos.dt2w.Tetris;
 
 import android.app.Service;
 import android.content.ContentResolver;
@@ -58,7 +58,7 @@ public class DT2WServiceTetris extends Service {
         void update() {
             int dt2wValue = Secure.getInt(mContext.getContentResolver(), Secure.DOUBLE_TAP_TO_WAKE, 0);
             boolean dt2wEnabled = dt2wValue == 1;
-            SystemProperties.set("persist.sys.tetris.dt2w", dt2wEnabled ? "1" : "0");
+            SystemProperties.set("persist.sys.Tetris.dt2w", dt2wEnabled ? "1" : "0");
         }
 
         @Override

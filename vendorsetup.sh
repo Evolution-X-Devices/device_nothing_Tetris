@@ -6,7 +6,7 @@ fi
 if [ ! -d "hardware/mediatek" ]; then
   git clone https://github.com/SuperAviation001/android_hardware_mediatek -b lineage-22.2 hardware/mediatek
 fi
-if [ ! -d "vendor/nothing/tetris" ]; then
+if [ ! -d "vendor/nothing/Tetris" ]; then
   git clone https://gitlab.com/abdullashakkeeb693/tetris_vendor_tree -b a15 vendor/nothing/Tetris
 fi
 if [ ! -d "device/nothing/Tetris-kernel" ]; then

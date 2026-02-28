@@ -448,7 +448,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator.service.tetris
+    android.hardware.vibrator.service.Tetris
 
 # Wifi
 PRODUCT_PACKAGES += \

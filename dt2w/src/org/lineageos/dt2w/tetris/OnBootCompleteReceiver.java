@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.lineageos.dt2w.tetris;
+package org.lineageos.dt2w.Tetris;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
