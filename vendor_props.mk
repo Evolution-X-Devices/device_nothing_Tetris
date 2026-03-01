@@ -76,6 +76,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.mdp.cz.enable=1 \
     vendor.camera.mdp.dre.enable=1 \
     vendor.mtk.camera.app.fd.video=1
+    vendor.debug.morpho.videoeis.enable=true
+    vendor.debug.morpho.zoomeis.enable=true
 
 # Charger
 PRODUCT_PROPERTY_OVERRIDES += \
