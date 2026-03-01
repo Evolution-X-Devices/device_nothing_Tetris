@@ -122,7 +122,7 @@ TARGET_BOARD_PLATFORM := mt6878
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
-TARGET_PRODUCT_PROP += $(LOCAL_PATH)/configs/props/product.prop
+TARGET_PRODUCT_PROP += device/nothing/Tetris/configs/props/product.prop
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
