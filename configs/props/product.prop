@@ -1,0 +1,2 @@
+# zRAM
+ro.zram_backing_device_min_free_mb=1536

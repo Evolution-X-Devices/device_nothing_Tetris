@@ -15,6 +15,13 @@ on init
     write /dev/cpuctl/rt/cpu.uclamp.max max
     write /dev/cpuctl/rt/cpu.uclamp.min 0
     write /dev/cpuctl/rt/cpu.shares 20480
+    
+    # zram
+    swapon_all /vendor/etc/fstab.enableswap
+    
+    # Back to default VM settings
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10
 
     # Background tasks for best efficiency
     write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
