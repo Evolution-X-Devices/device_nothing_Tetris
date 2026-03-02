@@ -40,6 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-filter=speed-profile \
     dalvik.vm.background-dexopt=speed-profile
 
+
 # Full ART Dexpreopt (VDEX/ODEX generation)
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
@@ -212,7 +213,8 @@ PRODUCT_PACKAGES += \
 
 # Graphics shims
 PRODUCT_PACKAGES += \
-    libprocessgroup_shim
+    libprocessgroup_shim \
+    libbase_shim
 
 # DRM
 PRODUCT_PACKAGES += \

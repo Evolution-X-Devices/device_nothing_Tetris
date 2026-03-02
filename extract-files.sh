@@ -82,6 +82,13 @@ function blob_fixup() {
         vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so)
             "$PATCHELF" --replace-needed "libui.so" "libui-v34.so" "$2"
             ;;
+        vendor/lib64/libmtkcam_grallocutils_aidlv1helper.so|vendor/lib64/libmtkcam_grallocutils.so)
+            "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
+            "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
+            ;;
+        vendor/lib64/mt6878/libcam.hal3a.so|vendor/lib64/mt6878/libcam.hal3a.ctrl.so|vendor/lib64/mt6878/libmtkcam_cputrack.so|vendor/lib64/mt6878/libmtkcam_request_requlator.so)
+            "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
+            ;;
         vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc)
             echo "$(cat ${2}) input" > "${2}"
             ;;
