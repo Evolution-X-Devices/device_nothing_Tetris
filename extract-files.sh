@@ -70,9 +70,6 @@ function blob_fixup() {
         vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc)
             sed -i 's|android.hardware.graphics.allocator@4.0-service-mediatek|mt6878/android.hardware.graphics.allocator@4.0-service-mediatek.mt6878|g' "${2}"
             ;;
-        vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc)
-            sed -i 's|android.hardware.graphics.allocator-V2-service-mediatek|mt6878/android.hardware.graphics.allocator-V2-service-mediatek.mt6878|g' "${2}"
-            ;;
         vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc)
             sed -i 's|start|enable|g' "$2"
             ;;
@@ -81,6 +78,17 @@ function blob_fixup() {
             ;;
         vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so)
             "$PATCHELF" --replace-needed "libui.so" "libui-v34.so" "$2"
+            ;;
+            vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc)
+            sed -i 's|android.hardware.graphics.allocator-V2-service-mediatek|mt6878/android.hardware.graphics.allocator-V2-service-mediatek.mt6878|g' "${2}"
+            sed -i '/task_profiles ServiceCapacityLow/d' "${2}"
+            sed -i '/task_profiles ProcessCapacityHigh HighPerformance/d' "${2}"
+            sed -i '/class hal/a \    task_profiles ProcessCapacityHigh HighPerformance' "${2}"
+            ;;
+        vendor/etc/init/android.hardware.graphics.composer@3.2-service.rc)
+            sed -i '/task_profiles ServiceCapacityLow/d' "${2}"
+            sed -i '/task_profiles ProcessCapacityHigh HighPerformance/d' "${2}"
+            sed -i '/class hal/a \    task_profiles ProcessCapacityHigh HighPerformance' "${2}"
             ;;
         vendor/lib64/libmtkcam_grallocutils_aidlv1helper.so|vendor/lib64/libmtkcam_grallocutils.so)
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
