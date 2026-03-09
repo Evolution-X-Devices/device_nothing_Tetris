@@ -90,6 +90,12 @@ function blob_fixup() {
             sed -i '/task_profiles ProcessCapacityHigh HighPerformance/d' "${2}"
             sed -i '/class hal/a \    task_profiles ProcessCapacityHigh HighPerformance' "${2}"
             ;;
+        vendor/lib64/libnvram.so)
+            "$PATCHELF" --add-needed libbase_shim.so "$2"
+            ;;
+        vendor/lib64/libtflite_mtk.so)
+            "$PATCHELF" --add-needed libbase_shim.so "$2"
+            ;;
         vendor/lib64/libmtkcam_grallocutils_aidlv1helper.so|vendor/lib64/libmtkcam_grallocutils.so)
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
             "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
