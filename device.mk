@@ -58,6 +58,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 include $(LOCAL_PATH)/vendor_props.mk
 
+# Hotword
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/permissions/privapp-permissions-com.android.hotwordenrollment.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-com.android.hotwordenrollment.xml
+
 # Inherit virtual_ab_ota product
 ifeq ($(WITH_GMS),true)
 PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE ?= erofs
