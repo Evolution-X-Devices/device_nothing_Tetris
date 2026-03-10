@@ -48,6 +48,11 @@ PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed-profile
 DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed-profile
 PRODUCT_SKIP_DEXPREOPT := false
 
+
+#libui
+PRODUCT_PACKAGES += \
+    libui-v34
+
 # General perf / storage helpers
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.fuse.passthrough.enable=true \
@@ -57,6 +62,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     
 
 include $(LOCAL_PATH)/vendor_props.mk
+
 
 # Hotword
 PRODUCT_COPY_FILES += \
@@ -98,6 +104,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
+
+# Tinyxml
+PRODUCT_PACKAGES += \
+    libtinyxml2-v34
 
 # Bootctrl
 PRODUCT_PACKAGES += \

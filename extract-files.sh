@@ -66,6 +66,7 @@ function blob_fixup() {
             ;;
         vendor/lib64/hw/audio.primary.mt6878.so)
             "${PATCHELF}" --replace-needed "libalsautils.so" "libalsautils-stock.so" "${2}"
+            "$PATCHELF" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "$2"
             ;;
         vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc)
             sed -i 's|android.hardware.graphics.allocator@4.0-service-mediatek|mt6878/android.hardware.graphics.allocator@4.0-service-mediatek.mt6878|g' "${2}"
@@ -74,10 +75,8 @@ function blob_fixup() {
             sed -i 's|start|enable|g' "$2"
             ;;
         vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so)
-            grep -q libui_shim.so "$2" || "$PATCHELF" --add-needed libui_shim.so "$2"
-            ;;
-        vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so)
             "$PATCHELF" --replace-needed "libui.so" "libui-v34.so" "$2"
+            "$PATCHELF" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "$2"
             ;;
             vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc)
             sed -i 's|android.hardware.graphics.allocator-V2-service-mediatek|mt6878/android.hardware.graphics.allocator-V2-service-mediatek.mt6878|g' "${2}"
@@ -96,12 +95,30 @@ function blob_fixup() {
         vendor/lib64/libtflite_mtk.so)
             "$PATCHELF" --add-needed libbase_shim.so "$2"
             ;;
+        vendor/lib64/mt6878/libmmlpqImpl.so)
+            "$PATCHELF" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "$2"
+            ;;
+        vendor/lib64/libpqxmlflagparser.so)
+            "$PATCHELF" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "$2"
+            ;;
+        vendor/lib64/libpqxmlparser.so)
+            "$PATCHELF" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "$2"
+            ;;
+        vendor/lib64/libsilkybrightnesscore.so)
+            "$PATCHELF" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "$2"
+            ;;
         vendor/lib64/libmtkcam_grallocutils_aidlv1helper.so|vendor/lib64/libmtkcam_grallocutils.so)
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
             "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
             ;;
         vendor/lib64/mt6878/libcam.hal3a.so|vendor/lib64/mt6878/libcam.hal3a.ctrl.so|vendor/lib64/mt6878/libmtkcam_cputrack.so|vendor/lib64/mt6878/libmtkcam_request_requlator.so)
             "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
+            ;;
+        vendor/lib64/libmmlpqImpl.so)
+            "$PATCHELF" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "$2"
+            ;;
+       vendor/lib64/librt_extamp_intf.so)
+            "$PATCHELF" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "$2"
             ;;
         vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc)
             echo "$(cat ${2}) input" > "${2}"
