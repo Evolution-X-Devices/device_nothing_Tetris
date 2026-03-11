@@ -156,23 +156,25 @@ PRODUCT_COPY_FILES += \
 # NTF
 PRODUCT_PACKAGES += \
     nt-fwk.Tetris
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.common-V1-ndk.vendor \
     android.hardware.audio.service \
-    android.hardware.audio@7.1-impl \
-    android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio@7.1-impl:64 \
+    android.hardware.audio.effect@7.0-impl:64 \
     audioclient-types-aidl-cpp.vendor \
-    audio.bluetooth.default \
-    audio.r_submix.default \
-    audio_policy.stub \
-    audio.usb.default \
+    audio.bluetooth.default:64 \
+    audio.r_submix.default:64 \
+    audio_policy.stub:64 \
+    audio.usb.default:64 \
     libalsautils \
     libaudio_aidl_conversion_common_ndk.vendor \
     libaudiofoundation.vendor \
     libnbaio_mono \
     libtinycompress \
     libxml2.vendor
+
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
