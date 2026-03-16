@@ -105,7 +105,7 @@ on init
     write /sys/kernel/ged/hal/force_loading_base 0
 
      #sched
-     write /proc/sys/kernel/sched_pelt_multiplier 2
+     write /proc/sys/kernel/sched_pelt_multiplier 4
     
 on property:sys.boot_completed=1
     # Enable PowerHAL hint processing
