@@ -75,10 +75,6 @@ on init
     write /dev/cpuctl/top-app/cpu.uclamp.min 5
     write /dev/cpuctl/top-app/cpu.uclamp.max max
     write /dev/cpuctl/top-app/cpu.shares 20480
-    
-    # F2FS
-    write /dev/sys/fs/by-name/userdata/data_io_flag 56
-    write /dev/sys/fs/by-name/userdata/node_io_flag 56
 
     # F2FS (charger / post-boot)
     write /dev/sys/fs/by-name/userdata/data_io_flag 8
