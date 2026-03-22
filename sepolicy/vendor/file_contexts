@@ -15,3 +15,6 @@
 
 # Power
 /vendor/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr                       u:object_r:hal_power_default_exec:s0
+
+# touch node
+/sys/devices/platform/soc/11c22000\.i2c/i2c-2/2-0038(/.*)?    u:object_r:sysfs_touch:s0

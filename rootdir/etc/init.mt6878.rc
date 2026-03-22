@@ -303,6 +303,10 @@ on post-fs-data
     chmod 0666 /proc/touchpanel/fts_pocket_mode
     chown system system /proc/touchpanel/fts_game_mode
     chmod 0666 /proc/touchpanel/fts_game_mode
+    chown system system /sys/devices/platform/soc/11c22000.i2c/i2c-2/2-0038/fts_gesture_single_tap_pressed
+    chmod 0444 /sys/devices/platform/soc/11c22000.i2c/i2c-2/2-0038/fts_gesture_single_tap_pressed
+    chown system system /sys/devices/platform/soc/11c22000.i2c/i2c-2/2-0038/fts_gesture_fod_pressed
+    chmod 0444 /sys/devices/platform/soc/11c22000.i2c/i2c-2/2-0038/fts_gesture_fod_pressed
 #endif /* NT_EDIT */
 
 # -----------------------
