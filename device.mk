@@ -442,6 +442,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0.vendor \
     android.hardware.sensors@2.1.vendor \
     android.hardware.sensors-V2-ndk.vendor \
+    android.hardware.sensors@2.0-subhal-impl-1.0 \
     libsensorndkbridge
 
 PRODUCT_COPY_FILES += \
