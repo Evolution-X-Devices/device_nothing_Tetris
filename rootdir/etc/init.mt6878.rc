@@ -105,7 +105,6 @@ on fs
     # mount fstab
     write /proc/bootprof "INIT:Mount_START"
     mount_all --early
-    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/by-name/userdata
     write /proc/bootprof "INIT:Mount_END"
 
 on late-fs
