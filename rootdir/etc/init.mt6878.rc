@@ -1193,14 +1193,6 @@ on boot
 on boot
     insmod /vendor/lib/modules/msync2_frd.ko
 
-# VSIM service (vendor OSI)
-service osi /system/bin/osi
-    class main
-    user root
-    disabled
-    oneshot
-    #seclabel u:r:osi:s0
-
 # BEE-207
 ##NT,start charge sevice
  service vendor.charge-default-poweroff /vendor/bin/hw/vendor.noth.hardware.charge-service
