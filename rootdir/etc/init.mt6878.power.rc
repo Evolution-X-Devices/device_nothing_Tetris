@@ -30,6 +30,9 @@ on init
 
     # multi-gen LRU
     write /sys/kernel/mm/lru_gen/enabled y
+    
+    # khugepaged tuning
+    write /sys/kernel/mm/transparent_hugepage/khugepaged/scan_sleep_millisecs 60000
 
     # UFS
     write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 0
