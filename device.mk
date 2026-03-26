@@ -303,7 +303,6 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr \
-    vendor.mediatek.hardware.mtkpower@1.2-service.stub \
     android.hardware.power-V4-ndk.vendor \
     android.hardware.power@1.2.vendor
 
@@ -313,7 +312,6 @@ PRODUCT_PACKAGES += \
     libmtkperf_client:64
 
 PRODUCT_COPY_FILES += \
-
 $(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Permissions
