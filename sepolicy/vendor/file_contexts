@@ -18,3 +18,7 @@
 
 # touch node
 /sys/devices/platform/soc/11c22000\.i2c/i2c-2/2-0038(/.*)?    u:object_r:sysfs_touch:s0
+
+# sensor
+
+/vendor/bin/hw/vendor\.noth\.hardware\.sensor\.sensor_extension-service    u:object_r:hal_sensors_default_exec:s0

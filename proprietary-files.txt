@@ -2608,6 +2608,12 @@ vendor/lib64/hw/sensors.mt6878.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
 vendor/lib64/libksensor.so
+vendor/bin/hw/vendor.noth.hardware.sensor.sensor_extension-service
+vendor/etc/init/hw/init.sensor_2_0.rc
+vendor/etc/init/vendor.noth.hardware.sensor.sensor_extension-service.rc
+vendor/etc/vintf/manifest/vendor.noth.hardware.sensor.sensor_extension-service.xml
+vendor/lib64/libsensor_extension.so
+vendor/lib64/vendor.noth.hardware.sensor.sensor_extension-V1-ndk.so
 
 # SoundTrigger
 vendor/lib64/libvow_ap_test_aa.so
