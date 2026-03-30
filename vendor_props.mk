@@ -294,6 +294,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lmk.downgrade_pressure=60 \
     ro.lmk.kill_timeout_ms=50 \
+    ro.lmk.stall_limit_critical=40 \
     ro.lmk.psi_complete_stall_ms=700 \
     ro.lmk.swap_free_low_percentage=10 \
     ro.lmk.swap_util_max=100 \
