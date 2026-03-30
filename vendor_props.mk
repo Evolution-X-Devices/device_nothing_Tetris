@@ -189,6 +189,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.graphics.game_default_frame_rate.disabled=true \
     debug.renderengine.backend=skiaglthreaded \
     debug.sf.enable_gl_backpressure=1 \
     debug.sf.high_fps_early_gl_phase_offset_ns=-12666667 \
