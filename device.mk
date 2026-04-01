@@ -162,7 +162,6 @@ PRODUCT_PACKAGES += \
     audioclient-types-aidl-cpp.vendor \
     audio.bluetooth.default:64 \
     audio.r_submix.default:64 \
-    audio_policy.stub:64 \
     audio.usb.default:64 \
     libalsautils \
     libaudio_aidl_conversion_common_ndk.vendor \
