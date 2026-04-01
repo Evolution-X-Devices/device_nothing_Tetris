@@ -67,6 +67,7 @@ vendor/lib64/soundfx/libspatializer.so
 
 # Audio Configurations
 vendor/etc/AudioLog_dynamic.xml
+vendor/lib64/hw/sound_trigger.primary.default.so
 vendor/etc/audio_framework_configuration.xml
 vendor/etc/audio_param/AudioParamOptions_mgvi.xml
 vendor/etc/audio_param/AudioParamOptions_vext.xml

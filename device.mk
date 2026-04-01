@@ -159,6 +159,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@7.1-impl:64 \
     android.hardware.audio.effect@7.0-impl:64 \
+    android.hardware.soundtrigger@2.3-impl \
     audioclient-types-aidl-cpp.vendor \
     audio.bluetooth.default:64 \
     audio.r_submix.default:64 \
