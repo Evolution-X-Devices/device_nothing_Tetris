@@ -389,9 +389,9 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.sim-V2-ndk.vendor \
     android.hardware.radio.voice-V2-ndk.vendor
 
+$(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
+
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/permissions/mediatek-common.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/mediatek-common.xml \
-    $(LOCAL_PATH)/permissions/mediatek-framework.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/mediatek-framework.xml \
     $(LOCAL_PATH)/permissions/mediatek-ims-base.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/mediatek-ims-base.xml \
     $(LOCAL_PATH)/permissions/mediatek-ims-common.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/mediatek-ims-common.xml \
     $(LOCAL_PATH)/permissions/mediatek-telecom-common.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/mediatek-telecom-common.xml \
