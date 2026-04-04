@@ -123,8 +123,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Dex2oat64
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat64.enabled=true
-
+    dalvik.vm.dex2oat64.enabled=true \
+    dalvik.vm.dex2oat-cpu-set=0,1,2,3 \
+    dalvik.vm.dex2oat-threads=4 \
+    dalvik.vm.image-dex2oat-cpu-set=0,1,2,3 \
+    dalvik.vm.image-dex2oat-threads=4
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
