@@ -19,36 +19,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.soc.model=Dimensity_7300 \
     persist.sys.sf.color_saturation=0.759 
 
-# ART / JIT / Dex2Oat 
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.device_config.runtime.dex2oat64.enabled=true \
-    persist.device_config.runtime.use_art_service=true \
-    persist.device_config.runtime.use_app_image_startup_cache=true \
-    persist.device_config.runtime.dedup_boot_image=true \
-    dalvik.vm.systemuicompilerfilter=speed-profile \
-    dalvik.vm.systemservercompilerfilter=speed-profile \
-    dalvik.vm.dex2oat-threads=6 \
-    dalvik.vm.image-dex2oat-threads=6 \
-    dalvik.vm.boot-dex2oat-threads=6 \
-    dalvik.vm.dexopt.secondary=true \
-    dalvik.vm.appimageformat=lz4 \
-    dalvik.vm.minidebuginfo=true \
-    dalvik.vm.dex2oat-resolve-startup-strings=true \
-    dalvik.vm.dex2oat-minidebuginfo=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-filter=speed-profile \
-    dalvik.vm.background-dexopt=speed-profile
-
-
-# Full ART Dexpreopt (VDEX/ODEX generation)
-WITH_DEXPREOPT := true
-WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed-profile
-DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed-profile
-PRODUCT_SKIP_DEXPREOPT := false
-
-
 #libui
 PRODUCT_PACKAGES += \
     libui-v34
