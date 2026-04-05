@@ -117,7 +117,8 @@ PRODUCT_PACKAGES += \
     SystemUIOverlayTetris \
     TelephonyOverlayTetris \
     UpdaterResTetris \
-    WifiResOverlayTetris
+    WifiResOverlayTetris \
+    CarrierConfigResTargetTetris 
 
 # APNs
 PRODUCT_COPY_FILES += \
