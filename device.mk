@@ -105,6 +105,7 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Overlays
+$(call inherit-product, hardware/mediatek/overlay/mssi.mk)
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 DEVICE_PACKAGE_OVERLAYS += \
@@ -115,10 +116,8 @@ PRODUCT_PACKAGES += \
     LauncherOverlayTetris \
     SettingsResTetris \
     SystemUIOverlayTetris \
-    TelephonyOverlayTetris \
     UpdaterResTetris \
-    WifiResOverlayTetris \
-    CarrierConfigResTargetTetris 
+    CarrierConfigResTargetTetris
 
 # APNs
 PRODUCT_COPY_FILES += \
@@ -348,6 +347,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # Radio
+ENABLE_VENDOR_RIL_SERVICE := true
+$(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
+
 PRODUCT_PACKAGES += \
     android.hardware.radio-V2-ndk.vendor \
     android.hardware.radio.config-V2-ndk.vendor \
@@ -359,8 +361,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.sap-V1-ndk.vendor \
     android.hardware.radio.sim-V2-ndk.vendor \
     android.hardware.radio.voice-V2-ndk.vendor
-
-$(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/mediatek-ims-base.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/mediatek-ims-base.xml \

@@ -10,5 +10,5 @@
     <overlay
       android:targetPackage="com.android.launcher3"
       android:isStatic="true"
-      android:priority="1000"/>
+      android:priority="200"/>
 </manifest>
