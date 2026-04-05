@@ -13,8 +13,15 @@ on init
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "performance"
     
+    #UFS
+    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 0
+
     #fs 
     write /sys/block/sda/queue/scheduler mq-deadline
+    
+    # F2FS
+    write /dev/sys/fs/by-name/userdata/data_io_flag 56
+    write /dev/sys/fs/by-name/userdata/node_io_flag 56
 
     # Set teo as cpu idle governor
     write /sys/devices/system/cpu/cpuidle/current_governor teo
@@ -26,10 +33,23 @@ on init
     write /dev/blkio/blkio.prio.class none-to-rt
     write /dev/blkio/blkio.prio.class promote-to-rt
 
-    # Back to default VM settings
-    write /proc/sys/vm/dirty_expire_centisecs 3000
-    write /proc/sys/vm/dirty_background_ratio 10
-    
+on charger
+    # UFS
+    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 1
+
+    # F2FS (charger / post-boot)
+    write /dev/sys/fs/by-name/userdata/data_io_flag 8
+    write /dev/sys/fs/by-name/userdata/node_io_flag 8
+    write /dev/sys/fs/by-name/userdata/max_io_bytes 524288
+    write /dev/sys/fs/by-name/userdata/min_hot_blocks 0
+
+on post-fs-data
+    # Disable watermark boost
+    write /proc/sys/vm/watermark_boost_factor 0
+
+    # multi-gen LRU
+    write /sys/kernel/mm/lru_gen/enabled y
+
     # memory reserve tuning for GKI
     write /proc/sys/vm/min_free_kbytes 27386
     write /proc/sys/vm/lowmem_reserve_ratio "0 0 0"
@@ -45,20 +65,32 @@ on init
     
     # disable khugepaged (THP)
     write /sys/kernel/mm/transparent_hugepage/enabled "never"
-
-    # UFS
-    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 0
-    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 1
-
-     #sched
-     write /proc/sys/kernel/sched_pelt_multiplier 4
+ 
+    # disable multiple kswapd threads
+    write /proc/sys/vm/kswapd_threads 1
 
 on property:sys.boot_completed=1
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
- 
-# Adjust watermark level
+    
+    # UFS
+    write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 1
+
+    # F2FS (charger / post-boot)
+    write /dev/sys/fs/by-name/userdata/data_io_flag 8
+    write /dev/sys/fs/by-name/userdata/node_io_flag 8
+    write /dev/sys/fs/by-name/userdata/max_io_bytes 524288
+    write /dev/sys/fs/by-name/userdata/min_hot_blocks 0
+   
+    # zram
+    swapon_all /vendor/etc/fstab.enableswap
+
+    # Adjust watermark level
     write /proc/sys/vm/watermark_scale_factor 200
+
+    # vm
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10
 
   # End boot time tuning
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
@@ -84,9 +116,9 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/background/cpu.shares 1024
     write /dev/cpuctl/system-background/cpu.shares 2048
     write /dev/cpuctl/background/cpu.uclamp.min 0
-    write /dev/cpuctl/background/cpu.uclamp.max 20
+    write /dev/cpuctl/background/cpu.uclamp.max 50
     write /dev/cpuctl/system-background/cpu.uclamp.min 1
-    write /dev/cpuctl/system-background/cpu.uclamp.max 40
+    write /dev/cpuctl/system-background/cpu.uclamp.max 60
 
     # Camera daemon tasks
     write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
@@ -127,13 +159,7 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/top-app/cpu.uclamp.max max
     write /dev/cpuctl/top-app/cpu.shares 20480
 
-    # F2FS (charger / post-boot)
-    write /dev/sys/fs/by-name/userdata/data_io_flag 8
-    write /dev/sys/fs/by-name/userdata/node_io_flag 8
-    write /dev/sys/fs/by-name/userdata/max_io_bytes 524288
-    write /dev/sys/fs/by-name/userdata/min_hot_blocks 0
-
-# 6GB and 8GB dalvik optimisatiom
+    # 6GB and 8GB dalvik optimisatiom
 on property:ro.boot.ddr_size=6442450944
     setprop dalvik.vm.heapstartsize 16m
     setprop dalvik.vm.heapgrowthlimit 192m
