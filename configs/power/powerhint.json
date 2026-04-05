@@ -24,6 +24,7 @@
         "Name": "GpuPwrLevel",
         "Path": "/proc/gpufreqv2/fix_target_opp_index",
         "Values": [
+          "-1",
           "0",
           "1",
           "2",
@@ -54,49 +55,76 @@
           "27",
           "28",
           "29",
-          "30"
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35"
         ],
         "ResetOnInit": true,
         "DefaultIndex": 0,
         "Comments": [
-          "[00] freq: 950000, volt: 75625, vsram: 80000, posdiv: 2, vaging: 0, power: 1208",
-          "[01] freq: 943000, volt: 75625, vsram: 80000, posdiv: 2, vaging: 0, power: 1196",
-          "[02] freq: 937000, volt: 75625, vsram: 80000, posdiv: 2, vaging: 0, power: 1184",
-          "[03] freq: 931000, volt: 75000, vsram: 75000, posdiv: 2, vaging: 0, power: 1160",
-          "[04] freq: 925000, volt: 75000, vsram: 75000, posdiv: 2, vaging: 0, power: 1148",
-          "[05] freq: 918000, volt: 74375, vsram: 75000, posdiv: 2, vaging: 0, power: 1112",
-          "[06] freq: 912000, volt: 74375, vsram: 75000, posdiv: 2, vaging: 0, power: 1112",
-          "[07] freq: 906000, volt: 74375, vsram: 75000, posdiv: 2, vaging: 0, power: 1101",
-          "[08] freq: 900000, volt: 73750, vsram: 75000, posdiv: 2, vaging: 0, power: 1088",
-          "[09] freq: 885000, volt: 73125, vsram: 75000, posdiv: 2, vaging: 0, power: 1054",
-          "[10] freq: 870000, volt: 72500, vsram: 75000, posdiv: 2, vaging: 0, power: 1010",
-          "[11] freq: 855000, volt: 71875, vsram: 75000, posdiv: 2, vaging: 0, power: 976",
-          "[12] freq: 840000, volt: 71250, vsram: 75000, posdiv: 2, vaging: 0, power: 954",
-          "[13] freq: 825000, volt: 70625, vsram: 75000, posdiv: 2, vaging: 0, power: 912",
-          "[14] freq: 810000, volt: 70000, vsram: 75000, posdiv: 2, vaging: 0, power: 881",
-          "[15] freq: 795000, volt: 69375, vsram: 75000, posdiv: 2, vaging: 0, power: 841",
-          "[16] freq: 780000, volt: 68750, vsram: 75000, posdiv: 2, vaging: 0, power: 812",
-          "[17] freq: 765000, volt: 68125, vsram: 75000, posdiv: 2, vaging: 0, power: 792",
-          "[18] freq: 750000, volt: 67500, vsram: 75000, posdiv: 2, vaging: 0, power: 754",
-          "[19] freq: 735000, volt: 66875, vsram: 75000, posdiv: 2, vaging: 0, power: 728",
-          "[20] freq: 720000, volt: 66250, vsram: 75000, posdiv: 2, vaging: 0, power: 692",
-          "[21] freq: 705000, volt: 65625, vsram: 75000, posdiv: 2, vaging: 0, power: 683",
-          "[22] freq: 690000, volt: 65000, vsram: 75000, posdiv: 2, vaging: 0, power: 648",
-          "[23] freq: 675000, volt: 64375, vsram: 75000, posdiv: 2, vaging: 0, power: 624",
-          "[24] freq: 660000, volt: 63750, vsram: 75000, posdiv: 2, vaging: 0, power: 592",
-          "[25] freq: 637000, volt: 63750, vsram: 75000, posdiv: 2, vaging: 0, power: 575",
-          "[26] freq: 615000, volt: 63125, vsram: 75000, posdiv: 2, vaging: 0, power: 537",
-          "[27] freq: 592000, volt: 62500, vsram: 75000, posdiv: 2, vaging: 0, power: 520",
-          "[28] freq: 570000, volt: 61875, vsram: 75000, posdiv: 2, vaging: 0, power: 490",
-          "[29] freq: 547000, volt: 61250, vsram: 75000, posdiv: 2, vaging: 0, power: 455",
-          "[30] freq: 525000, volt: 60625, vsram: 75000, posdiv: 2, vaging: 0, power: 428",
-          "[31] freq: 502000, volt: 60625, vsram: 75000, posdiv: 2, vaging: 0, power: 406",
-          "[32] freq: 480000, volt: 60000, vsram: 75000, posdiv: 2, vaging: 0, power: 390",
-          "[33] freq: 457000, volt: 59375, vsram: 75000, posdiv: 2, vaging: 0, power: 365",
-          "[34] freq: 435000, volt: 58750, vsram: 75000, posdiv: 2, vaging: 0, power: 334",
-          "[35] freq: 412000, volt: 58125, vsram: 75000, posdiv: 2, vaging: 0, power: 311",
-          "[36] freq: 390000, volt: 57500, vsram: 75000, posdiv: 2, vaging: 0, power: 289"
+          "[-1] normal/no boost",
+          "[00] freq: 1047000, volt: 73750, vsram: 75000",
+          "[01] freq: 1024000, volt: 73125, vsram: 75000",
+          "[02] freq: 1001000, volt: 72500, vsram: 75000",
+          "[03] freq:  978000, volt: 71875, vsram: 75000",
+          "[04] freq:  956000, volt: 71875, vsram: 75000",
+          "[05] freq:  933000, volt: 71250, vsram: 75000",
+          "[06] freq:  910000, volt: 70625, vsram: 75000",
+          "[07] freq:  888000, volt: 70000, vsram: 75000",
+          "[08] freq:  865000, volt: 69375, vsram: 75000",
+          "[09] freq:  842000, volt: 68750, vsram: 75000",
+          "[10] freq:  820000, volt: 68125, vsram: 75000",
+          "[11] freq:  797000, volt: 67500, vsram: 75000",
+          "[12] freq:  775000, volt: 66875, vsram: 75000",
+          "[13] freq:  753000, volt: 66250, vsram: 75000",
+          "[14] freq:  731000, volt: 65625, vsram: 75000",
+          "[15] freq:  709000, volt: 65000, vsram: 75000",
+          "[16] freq:  686000, volt: 64375, vsram: 75000",
+          "[17] freq:  664000, volt: 63750, vsram: 75000",
+          "[18] freq:  642000, volt: 63125, vsram: 75000",
+          "[19] freq:  620000, volt: 62500, vsram: 75000",
+          "[20] freq:  598000, volt: 61875, vsram: 75000",
+          "[21] freq:  575000, volt: 61250, vsram: 75000",
+          "[22] freq:  553000, volt: 60625, vsram: 75000",
+          "[23] freq:  531000, volt: 60000, vsram: 75000",
+          "[24] freq:  508000, volt: 59375, vsram: 75000",
+          "[25] freq:  485000, volt: 58750, vsram: 75000",
+          "[26] freq:  462000, volt: 58125, vsram: 75000",
+          "[27] freq:  439000, volt: 57500, vsram: 75000",
+          "[28] freq:  416000, volt: 56875, vsram: 75000",
+          "[29] freq:  393000, volt: 56250, vsram: 75000",
+          "[30] freq:  370000, volt: 55625, vsram: 75000",
+          "[31] freq:  349000, volt: 55000, vsram: 75000",
+          "[32] freq:  328000, volt: 54375, vsram: 75000",
+          "[33] freq:  307000, volt: 53750, vsram: 75000",
+          "[34] freq:  286000, volt: 53125, vsram: 75000",
+          "[35] freq:  265000, volt: 52500, vsram: 75000"
         ]
+      },
+      {
+        "Name": "GpuDvfsTimerMargin",
+        "Path": "/sys/kernel/ged/hal/timer_base_dvfs_margin",
+        "Values": [
+          "30",
+          "84215070",
+          "50"
+        ],
+        "DefaultIndex": 0,
+        "ResetOnInit": true
+      },
+      {
+        "Name": "GpuDvfsLoadingStep",
+        "Path": "/sys/kernel/ged/hal/loading_base_dvfs_step",
+        "Values": [
+          "104",
+          "771",
+          "15"
+        ],
+        "DefaultIndex": 0,
+        "ResetOnInit": true
       },
       {
         "Name": "CPUEfficiencyClusterMaxFreq",
@@ -500,7 +528,7 @@
         "PowerHint": "FIXED_PERFORMANCE",
         "Node": "GpuPwrLevel",
         "Duration": 0,
-        "Value": "0"
+        "Value": "-1"
       },
       {
         "PowerHint": "INTERACTION",
@@ -571,8 +599,20 @@
       {
         "PowerHint": "LAUNCH",
         "Node": "GpuPwrLevel",
-        "Duration": 0,
+        "Duration": 2000,
         "Value": "0"
+      },
+      {
+        "PowerHint": "LAUNCH",
+        "Node": "GpuDvfsTimerMargin",
+        "Duration": 2000,
+        "Value": "84215070"
+      },
+      {
+        "PowerHint": "LAUNCH",
+        "Node": "GpuDvfsLoadingStep",
+        "Duration": 2000,
+        "Value": "771"
       },
       {
         "PowerHint": "CAMERA_LAUNCH",
@@ -608,7 +648,19 @@
         "PowerHint": "EXPENSIVE_RENDERING",
         "Node": "CPUEfficiencyClusterMinFreq",
         "Duration": 0,
-         "Value": "9999999"
+        "Value": "9999999"
+      },
+      {
+        "PowerHint": "EXPENSIVE_RENDERING",
+        "Node": "GpuDvfsTimerMargin",
+        "Duration": 0,
+        "Value": "50"
+      },
+      {
+        "PowerHint": "EXPENSIVE_RENDERING",
+        "Node": "GpuDvfsLoadingStep",
+        "Duration": 0,
+        "Value": "15"
       },
       {
         "PowerHint": "ML_ACC",
@@ -645,12 +697,12 @@
         "Node": "TAUclampMin",
         "Duration": 4000,
         "Value": "100"
-       },
-       {
-         "PowerHint": "DOUBLE_TAP_TO_WAKE",
-         "Node": "DoubleTapToWakeEnable",
-         "Duration": 0,
-         "Value": "1"
-       }
-     ]
-   }
+      },
+      {
+        "PowerHint": "DOUBLE_TAP_TO_WAKE",
+        "Node": "DoubleTapToWakeEnable",
+        "Duration": 0,
+        "Value": "1"
+      }
+    ]
+  }

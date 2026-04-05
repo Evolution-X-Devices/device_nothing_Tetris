@@ -50,17 +50,6 @@ on init
     write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 0
     write /sys/devices/platform/soc/112b0000.ufshci/clkgate_enable 1
 
-    # GPU tuning
-    write /sys/kernel/ged/hal/loading_base_dvfs_step 104
-    write /sys/kernel/ged/hal/dvfs_loading_mode 0
-    write /sys/kernel/ged/hal/dcs_mode 1
-    write /sys/kernel/ged/hal/fw_idle 0
-    write /sys/kernel/ged/hal/loading_stride_size 2
-    write /sys/kernel/ged/hal/fallback_timing 180
-    write /sys/kernel/ged/hal/fallback_interval 1
-    write /sys/kernel/ged/hal/fallback_window_size 1
-    write /sys/kernel/ged/hal/force_loading_base 0
-
      #sched
      write /proc/sys/kernel/sched_pelt_multiplier 4
 
