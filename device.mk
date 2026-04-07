@@ -17,7 +17,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.phh.mtk_ged_kpi=1 \
     ro.soc.manufacturer=MediaTek \
     ro.soc.model=Dimensity_7300 \
-    persist.sys.sf.color_saturation=0.759 
+    persist.sys.sf.color_saturation=0.759
 
 #libui
 PRODUCT_PACKAGES += \
@@ -29,7 +29,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.mtk_perf_simple_start_win=1 \
     ro.mtk_perf_fast_start_win=1 \
     ro.mtk_perf_response_time=1
-    
+
 
 include $(LOCAL_PATH)/vendor_props.mk
 
@@ -187,7 +187,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V3-ndk.vendor \
     android.hardware.graphics.common-V4-ndk.vendor \
     android.hardware.graphics.composer3-V2-ndk.vendor \
-    android.hardware.memtrack-service.mediatek-mali \
+    android.hardware.memtrack-service.mediatek \
     libprocessgroup.vendor \
     libhwc2on1adapter \
     libhwc2onfbadapter \
