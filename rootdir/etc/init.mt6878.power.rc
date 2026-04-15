@@ -163,23 +163,6 @@ on property:sys.boot_completed=1
     write /dev/cpuctl/top-app/cpu.uclamp.max max
     write /dev/cpuctl/top-app/cpu.shares 20480
 
-    # 6GB and 8GB dalvik optimisatiom
-on property:ro.boot.ddr_size=6442450944
-    setprop dalvik.vm.heapstartsize 16m
-    setprop dalvik.vm.heapgrowthlimit 192m
-    setprop dalvik.vm.heapsize 384m
-    setprop dalvik.vm.heaptargetutilization 0.50
-    setprop dalvik.vm.heapminfree 8m
-    setprop dalvik.vm.heapmaxfree 32m
-
-on property:ro.boot.ddr_size=8589934592
-    setprop dalvik.vm.heapstartsize 24m
-    setprop dalvik.vm.heapgrowthlimit 256m
-    setprop dalvik.vm.heapsize 512m
-    setprop dalvik.vm.heaptargetutilization 0.46
-    setprop dalvik.vm.heapminfree 8m
-    setprop dalvik.vm.heapmaxfree 48m
-    
      # Gralloc
     service vendor.gralloc-v2 /vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
     class hal animation
