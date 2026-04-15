@@ -707,11 +707,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # ZRAM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.zram_enabled=1 \
-    persist.sys.zram_size=100% \
-    persist.sys.zramwriteback_enable=true \
-    persist.sys.zramwriteback_first_boot=1 \
-    persist.sys.zramwriteback_size=2147483648
+    ro.zram.mark_idle_delay_mins=60 \
+    ro.zram.first_wb_delay_mins=1440 \
+    ro.zram.periodic_wb_delay_hours=24
 
 # Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
