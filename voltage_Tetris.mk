@@ -9,31 +9,25 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-#clover flags
-CLOVER_BUILDTYPE := UNOFFICIAL
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_DISABLE_ViperFX := true
-
-# Inherit some common infinity stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common voltage stuff.
+$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
 # Enable ADPF pipeline for UI performance
 PRODUCT_PRODUCT_PROPERTIES += \
 persist.vendor.power.adpf.enable=true \
 ro.vendor.powerhal.adpf.enable=true
 
-#crDroid flags
-TARGET_ENABLE_BLUR := true
-TARGET_BOOT_ANIMATION_RES := 1080
-WITH_GMS := true
-#gpu
-GPU_FREQS_PATH := /sys/devices/platform/13000000.mali/devfreq/available_frequencies
-GPU_MIN_FREQ_PATH := /sys/devices/platform/13000000.mali/devfreq/min_freq
+# Voltage Flags
+TARGET_BOOT_ANIMATION_RES := 2400
+TARGET_FACE_UNLOCK_SUPPORTED := true
+VOLTAGE_BUILD_TYPE := UNOFFICIAL
+EXTRA_UDFPS_ANIMATIONS := true
+TORCH_STR_SUPPORTED := true
 
 # Inherit from Tetris device
 $(call inherit-product, device/nothing/Tetris/device.mk)
 
-PRODUCT_NAME := lineage_Tetris
+PRODUCT_NAME := voltage_Tetris
 PRODUCT_DEVICE := Tetris
 PRODUCT_BRAND := Nothing
 PRODUCT_MANUFACTURER := Nothing
