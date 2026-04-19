@@ -208,6 +208,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.high_fps_late_app_phase_offset_ns=-8000000 \
     debug.sf.high_fps_late_sf_phase_offset_ns=-12666667 \
     debug.sf.enable_hwc_vds=0 \
+    debug.sf.predict_hwc_composition_strategy=0 \
     debug.stagefright.c2inputsurface=-1 \
     debug.sf.auto_latch_unsignaled=1 \
     debug.sf.enable_transaction_tracing=false \
