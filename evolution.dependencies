@@ -1,0 +1,26 @@
+[
+  {
+    "remote": "github",
+    "repository": "Evolution-X-Devices/device_nothing_Tetris-kernel",
+    "target_path": "device/nothing/Tetris-kernel",
+    "branch": "bka"
+  },
+  {
+    "remote": "github",
+    "repository": "NothingOSS/android_kernel_6.1_nothing_mt6878",
+    "target_path": "kernel/nothing/tetris",
+    "branch": "mt6878/Tetris/u"
+  },
+  {
+    "remote": "github",
+    "repository": "Evolution-X-Devices/vendor_nothing_Tetris",
+    "target_path": "vendor/nothing/Tetris",
+    "branch": "bka"
+  },
+  {
+    "remote": "github",
+    "repository": "abdulla-li/android_hardware_mediatek",
+    "target_path": "hardware/MediaTek",
+    "branch": "lineage-23.2"
+  }
+]
