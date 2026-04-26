@@ -203,6 +203,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.graphics.game_default_frame_rate.disabled=true \
     debug.renderengine.backend=skiaglthreaded \
     debug.sf.enable_gl_backpressure=1 \
+    debug.sf.enable_hwc_vds=0 \
+    debug.sf.hwc.min.duration=8400000 \
     debug.sf.high_fps_early_gl_phase_offset_ns=-12666667 \
     debug.sf.high_fps_early_phase_offset_ns=-12666667 \
     debug.sf.high_fps_late_app_phase_offset_ns=-8000000 \
@@ -227,8 +229,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_idle_timer_ms=3000 \
     ro.surface_flinger.set_touch_timer_ms=200 \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=4 \
-    ro.surface_flinger.vsync_event_phase_offset_ns=8400000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=-10933333 \
+    ro.surface_flinger.set_display_power_timer_ms=1000 \
     ro.surface_flinger.supports_background_blur=1 \
     debug.sf.region_sampling_duration_ns=8333333 \
     debug.sf.region_sampling_period_ns=99999984 \
@@ -244,7 +245,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.display.array.hbm.minlux=7000,18000,38000 \
     ro.vendor.display.array.lux=0,1,4,10,25,60,150,390,620,750,1000,1300,1700,2800,3500,4500,7000,8000 \
     ro.vendor.display.array.nits=7,7,14,34,70,84,90,111,132,145,178,211,248,318,344,500,500,700 \
-    ro.surface_flinger.uclamp.min=320 \
+    ro.surface_flinger.uclamp.min=125 \
+    ro.surface_flinger.vsync_event_phase_offset_ns=8400000 \
+    ro.surface_flinger.vsync_sf_event_phase_offset_ns=-10933333 \
     ro.vendor.display.hbm.maxbacklight=4095 \
     ro.vendor.display.low_brightness_threshold=0.108 \
     ro.vendor.display.normal.maxbacklight=2680 \
@@ -290,7 +293,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.c2.dmabuf.padding=3072 \
     media.stagefright.thumbnail.prefer_hw_codecs=true \
     ro.vendor.jpeg_decode_sw_opt=1 \
-    ro.vendor.mtk.c2.vdec.fmt.support.level=2 \
+    ro.vendor.mtk.c2.vdec.fmt.support.level=3 \
     ro.vendor.mtk.c2.vdec.vpp.turnkey.memc=1 \
     ro.vendor.mtk.gpud.mm.fbc.disable=false \
     ro.vendor.mtk_aod_support=1 \
@@ -677,11 +680,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.log.tag.trm_lib=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.wpfa_iptable_android=$(VENDOR_LOG_LEVEL)
 
+# RKPD
+PRODUCT_PROPERTY_OVERRIDES += \
+    remote_provisioning.enable_rkpd=true \
+    remote_provisioning.hostname=remoteprovisioning.googleapis.com \
+    remote_provisioning.connect_timeout_millis=2000
+    
 # ZRAM
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.zram.mark_idle_delay_mins=60 \
-    ro.zram.first_wb_delay_mins=1440 \
-    ro.zram.periodic_wb_delay_hours=24
+ro.zram.mark_idle_delay_mins=60 \
+ro.zram.first_wb_delay_mins=1440 \
+ro.zram.periodic_wb_delay_hours=24 
 
 # Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
