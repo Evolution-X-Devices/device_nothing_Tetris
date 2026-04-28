@@ -128,17 +128,17 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>4</item>
         <item>8</item>
+        <item>16</item>
+        <item>24</item>
+        <item>32</item>
+        <item>40</item>
+        <item>52</item>
         <item>64</item>
-        <item>98</item>
-        <item>104</item>
-        <item>110</item>
-        <item>116</item>
-        <item>122</item>
-        <item>128</item>
-        <item>134</item>
-        <item>182</item>
-        <item>255</item>
+        <item>80</item>
+        <item>120</item>
+        <item>180</item>
         <item>255</item>
         <item>255</item>
         <item>255</item>
@@ -397,7 +397,10 @@
          non-interactive display policy so that we don't reset while users are using their devices,
          but also so that we don't erroneously keep the short-term model if the device is dozing
          but the display is fully on. -->
-    <integer name="config_autoBrightnessShortTermModelTimeout">120000</integer>
+    <integer name="config_autoBrightnessShortTermModelTimeout">-1</integer>
+
+    <!-- Controls whether the auto-brightness system resets the ambient lux value after the light sensor warm-up period (e.g., when the screen turns on). -->
+    <bool name="config_autoBrightnessResetAmbientLuxAfterWarmUp">false</bool>
 
     <!-- the number of the max cached processes in the system. -->
     <integer name="config_customizedMaxCachedProcesses">64</integer>
