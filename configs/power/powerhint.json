@@ -277,6 +277,7 @@
       "Values": [
         "101",
         "50",
+        "25",
         "0",
         "-1"
       ],
@@ -504,8 +505,8 @@
     {
       "PowerHint": "INTERACTION",
       "Node": "GpuPwrLevel",
-      "Duration": 2000,
-      "Value": "6"
+      "Duration": 1500,
+      "Value": "12"
     },
     {
       "PowerHint": "LAUNCH",
@@ -571,13 +572,13 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GpuPwrLevel",
       "Duration": 0,
-      "Value": "2"
+      "Value": "6"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
       "Node": "GPUBlockBoost",
       "Duration": 0,
-      "Value": "50"
+      "Value": "25"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
