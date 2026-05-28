@@ -128,6 +128,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-threads=4 \
     dalvik.vm.image-dex2oat-cpu-set=0,1,2,3 \
     dalvik.vm.image-dex2oat-threads=4
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true \
@@ -450,6 +451,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.vt.mtk_thin_md_support_mode=0 \
     ro.vendor.vt_hevc_support=1 \
     telephony.active_modems.max_count=2
+
+# Surfacelinger
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.enable_egl_image_tracker=0
 
 # Sensor
 PRODUCT_PROPERTY_OVERRIDES += \
