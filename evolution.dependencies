@@ -19,8 +19,8 @@
   },
   {
     "remote": "github",
-    "repository": "abdulla-li/android_hardware_mediatek",
-    "target_path": "hardware/MediaTek",
-    "branch": "lineage-23.2"
+    "repository": "S-O-D-A/android_hardware_mediatek",
+    "target_path": "hardware/mediatek",
+    "branch": "bka"
   }
 ]
