@@ -13,7 +13,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Properties
 PRODUCT_PRODUCT_PROPERTIES += \
-    persist.sys.activity_anim_perf_override=true \
     persist.sys.phh.mtk_ged_kpi=1 \
     ro.soc.manufacturer=MediaTek \
     ro.soc.model=Dimensity_7300 \
