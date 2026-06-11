@@ -201,7 +201,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.graphics.game_default_frame_rate.disabled=true \
+    ro.surface_flinger.game_default_frame_rate_override=120 \
     debug.renderengine.backend=skiaglthreaded \
     debug.sf.enable_gl_backpressure=1 \
     debug.sf.enable_hwc_vds=0 \
