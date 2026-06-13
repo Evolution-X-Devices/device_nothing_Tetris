@@ -9,24 +9,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-#clover flags
-CLOVER_BUILDTYPE := UNOFFICIAL
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_DISABLE_ViperFX := true
-
-# Inherit some common infinity stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
 # Enable ADPF pipeline for UI performance
 PRODUCT_PRODUCT_PROPERTIES += \
 persist.vendor.power.adpf.enable=true \
 ro.vendor.powerhal.adpf.enable=true
-
-#crDroid flags
-TARGET_ENABLE_BLUR := true
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_HAS_UDFPS := true
-EXTRA_UDFPS_ANIMATIONS := true
 
 #gpu
 GPU_FREQS_PATH := /sys/devices/platform/13000000.mali/devfreq/available_frequencies
