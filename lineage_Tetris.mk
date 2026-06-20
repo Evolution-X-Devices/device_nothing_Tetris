@@ -14,6 +14,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 persist.vendor.power.adpf.enable=true \
 ro.vendor.powerhal.adpf.enable=true
 
+# Inherit LineageOS common config
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 #gpu
 GPU_FREQS_PATH := /sys/devices/platform/13000000.mali/devfreq/available_frequencies
 GPU_MIN_FREQ_PATH := /sys/devices/platform/13000000.mali/devfreq/min_freq
