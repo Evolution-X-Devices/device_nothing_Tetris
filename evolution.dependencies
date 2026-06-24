@@ -13,7 +13,7 @@
   },
   {
     "remote": "github",
-    "repository": "Evolution-X-Devices/vendor_nothing_Tetris",
+    "repository": "S-O-D-A/vendor_nothing_Tetris",
     "target_path": "vendor/nothing/Tetris",
     "branch": "bka"
   },
