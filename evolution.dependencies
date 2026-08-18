@@ -22,5 +22,17 @@
     "repository": "S-O-D-A/android_hardware_mediatek",
     "target_path": "hardware/mediatek",
     "branch": "bka"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "swiitch-OFF-Lab/hardware_dolby",
+    "target_path": "hardware/dolby",
+    "branch": "sony-1.5"
+  },
+  {
+    "remote": "github-non-los",
+    "repository": "swiitch-OFF-Lab/packages_apps_DolbyUI",
+    "target_path": "packages/apps/DolbyUI",
+    "branch": "a"
   }
 ]
